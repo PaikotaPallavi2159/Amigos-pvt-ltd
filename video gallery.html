@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Our Company</title>
+    <style>
+   /* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    background-color: #D3D3D3;
+    color: #333;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Header Styles */
+header {
+    background: rgb(161, 120, 232);
+    color: white;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header .logo {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+nav ul li {
+    margin: 0 10px;
+}
+
+nav ul li a {
+    color: white;
+    font-size: 1.3rem;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #FFD700;
+}
+
+/* Gallery Section */
+.gallery-container {
+    background: gray;
+    padding: 90px;
+    border-radius: 10px;
+    max-width: 1200px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    margin: 60px auto;
+}
+
+.gallery-container h1 {
+    font-size: 35px;
+    margin-bottom: 10px;
+    color: white;
+}
+
+.gallery-container p {
+    font-size: 20px;
+    line-height: 1.6;
+    margin-bottom: 30px;
+    color: white;
+}
+
+.video-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.video-item {
+    background: gray;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    color: rgb(161, 120, 232);
+    flex: 1 1 calc(33.33% - 20px);
+    min-width: 280px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.video-item h2 {
+    font-size: 25px;
+    margin-bottom: 10px;
+    color: white;
+}
+
+.video-item p {
+    font-size: 20px;
+    line-height: 1.5;
+}
+video {
+    width: 100%; /* Ensures the video takes up the full width of its container */
+    height: auto; /* Maintains the aspect ratio */
+    border-radius: 10px; /* Optional: Matches the container style */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Optional: Adds a shadow for a polished look */
+}
+
+
+.back-btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 5px 10px;
+    background: #4CAF50;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 15px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+    transition: background 0.3s ease;
+}
+
+.back-btn:hover {
+    background: #45a049;
+}
+
+/* Media Queries for Responsiveness */
+
+/* Large screens (1200px and up) */
+@media (max-width: 1200px) {
+    header .logo {
+        font-size: 40px;
+    }
+
+    nav ul li a {
+        font-size: 20px;
+    }
+
+    .gallery-container h1 {
+        font-size: 40px;
+    }
+
+    .gallery-container p {
+        font-size: 28px;
+    }
+
+    .video-item {
+        flex: 1 1 calc(45% - 20px); /* Two items per row on smaller screens */
+    }
+}
+
+/* Medium Screens (992px - 1200px) */
+@media (max-width: 992px) {
+    header .logo {
+        font-size: 35px;
+    }
+
+    nav ul li a {
+        font-size: 18px;
+    }
+
+    .gallery-container h1 {
+        font-size: 36px;
+    }
+
+    .gallery-container p {
+        font-size: 26px;
+    }
+
+    .video-item {
+        flex: 1 1 calc(50% - 20px); /* Two items per row */
+    }
+}
+
+/* Small Screens (768px - 992px) */
+@media (max-width: 768px) {
+    header .logo {
+        font-size: 30px;
+    }
+
+    nav ul li a {
+        font-size: 18px;
+    }
+
+    .gallery-container h1 {
+        font-size: 35px;
+    }
+
+    .gallery-container p {
+        font-size: 24px;
+    }
+
+    .video-item {
+        flex: 1 1 calc(100% - 20px); /* Stack video items */
+    }
+}
+
+/* Very Small Screens (480px - 768px) */
+@media (max-width: 480px) {
+    header .logo {
+        font-size: 25px;
+    }
+
+    nav ul li a {
+        font-size: 16px;
+    }
+
+    .gallery-container h1 {
+        font-size: 30px;
+    }
+
+    .gallery-container p {
+        font-size: 20px;
+    }
+
+    .back-btn {
+        font-size: 14px;
+    }
+
+    .video-item h2 {
+        font-size: 18px;
+    }
+
+    .video-item p {
+        font-size: 14px;
+    }
+}
+
+        /* Contact and Address Section */
+        .contact-address {
+            background: #333;
+            color: white;
+            padding:  40px 20px;
+            display: flex;
+            flex-wrap: wrap; /* Allow wrapping for smaller screens */
+            justify-content: space-between;
+            text-align: left;
+            font-size: 1rem; /* Responsive font size */
+        }
+
+        .contact-column, .address-column {
+            width: 48%; /* Each column takes up 48% of the space */
+            margin-bottom: 20px; /* Space between columns */
+        }
+
+        .contact-column h3, .address-column h3 {
+            font-size: 1.5rem; /* Responsive font size */
+            margin-bottom: 10px;
+        }
+
+        /* Footer Section */
+        footer {
+            background: white;
+            color: black;
+            text-align: center;
+            padding: 20px;
+            font-size: 1.5rem; /* Responsive font size */
+        }
+
+</style>
+</head>
+<body>
+    <header>
+        <div class="logo">Amigos Pvt. Ltd.</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="features.html">Features</a></li>
+                <li><a href="services.html">Services</a></li>
+                
+                <li><a href="video gallery.html">Video Gallery</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="gallery-container">
+        <h1>Video Gallery</h1>
+        <p>Explore our collection of videos showcasing our projects, services, and innovations.</p>
+        <div class="video-grid">
+            <div class="video-item">
+                <video controls>
+                    <source src="https://cdn.glitch.me/2a1e26d9-ab9f-4d0d-922f-a475d812e321/lv_0_20241230154014.mp4?v=1735558460386" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <h2>Run Trial</h2>
+            </div>
+            
+        </div>
+        <a href="index.html" class="back-btn">Back to Home</a>
+    </div>
+  <section class="contact-address">
+        <div class="contact-column">
+            <h3>Contact Us</h3>
+            <p>Amigos.pvt.ltd.2025@gmail.com</p>
+            <p>Phone: 9100274829</p>
+            <p>Hours: Mon-Fri 9:00 AM - 6 :00 PM</p>
+        </div>
+        <div class="address-column">
+            <h3>Our Address</h3>
+            <p>Amigos Pvt. Ltd.</p>
+            <p>Gandhi Nagar.</p>
+            <p>Gujarat, India, 382010</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        &copy; 2024 Amigos Pvt. Ltd.
+    </footer>
+    
+</body>
+</html>

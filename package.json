@@ -1,0 +1,15 @@
+{
+    "name": "contact-form",
+    "version": "1.0.0",
+    "description": "Contact Form with Validation",
+    "main": "server.js",
+    "type": "module",
+    "scripts": {
+        "start": "node script.js"
+    },
+    "dependencies": {
+        "body-parser": "^1.20.3",
+        "express": "^4.21.2",
+        "firebase": "^11.1.0"
+    }
+}

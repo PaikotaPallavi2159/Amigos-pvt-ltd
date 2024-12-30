@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Amigos Pvt. Ltd.</title>
+  <style>
+    /* General Styles */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: 'Arial', sans-serif;
+        line-height: 1.6;
+        background-color: #D3D3D3;
+        color: #333;
+    }
+
+    a {
+        text-decoration: none;
+        color: inherit;
+    }
+
+    /* Header Styles */
+    header {
+        background: rgb(161, 120, 232);
+        color: white;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    header .logo {
+        font-size: 2.5rem; /* Responsive font size */
+        font-weight: bold;
+        color: white;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+
+    nav ul {
+        list-style: none;
+        display: flex;
+        flex-wrap: wrap; /* Allow wrapping */
+        justify-content: center; /* Center items */
+        margin-top: 10px;
+    }
+
+    nav ul li {
+        margin: 0 10px; /* Adjusted margin for smaller screens */
+    }
+
+    nav ul li a {
+        color: white;
+        font-size: 1.3rem; /* Responsive font size */
+        transition: color 0.3s;
+    }
+
+    nav ul li a:hover {
+        color: #FFD700;
+    }
+
+    /* Mega News Grid Styles */
+    .mega-news-wrapper {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      padding: 20px;
+      flex-wrap: wrap;
+    }
+
+    .mega-news-card {
+      flex: 1;
+      min-width: 300px;
+      max-width: 400px;
+      background-color: var(--bgColor);
+      color: white;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.6);
+      text-align: center;
+      position: relative;
+      transition: box-shadow 0.3s ease-in-out;
+    }
+
+    .mega-news-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-bottom: 4px solid var(--bgColor);
+    }
+
+    .mega-news-card:hover {
+      box-shadow: 0 6px 10px rgba(0, 0, 0, 0.9);
+    }
+
+    .mega-news-content {
+      padding: 20px;
+      opacity: 0.5; /* Initial transparency of text */
+      transform: translateY(0);
+      transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    }
+
+    .mega-news-content p {
+      opacity: 0; /* Hide the paragraph initially */
+      visibility: hidden; /* Hide the paragraph initially */
+      transition: opacity 0.3s ease-in-out, visibility 0s ease-in-out 0.3s; /* Smooth transition */
+    }
+
+    .mega-news-card:hover .mega-news-content {
+      transform: translateY(-10px); /* Move text up on hover */
+      opacity: 1; /* Full opacity when hovering */
+    }
+
+    .mega-news-card:hover .mega-news-content p {
+      opacity: 1; /* Show paragraph when hovering */
+      visibility: visible; /* Make paragraph visible when hovering */
+    }
+
+    .mega-news-content h3 {
+      margin: 0 0 10px;
+      font-size: 1rem;
+    }
+
+    .mega-news-content p {
+      margin: 0;
+      font-size: 1.5rem;
+    }
+
+    /* About Section */
+    .content {
+      max-width: 1000px;
+      margin: 50px auto;
+      background: gray;
+      padding: 100px;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      color: white;
+    }
+
+    .content h1 {
+      font-size: 35px;
+      margin-bottom: 20px;
+    }
+
+    .content p {
+      font-size: 22px;
+      margin-bottom: 20px;
+      line-height: 1.8;
+      text-align: justify;
+    }
+
+    .back-btn {
+      display: inline-block;
+      padding: 10px 20px;
+      background: #4CAF50;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      font-size: 15px;
+      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+      transition: background 0.3s ease;
+    }
+
+    .back-btn:hover {
+      background: #45a049;
+    }
+
+    /* Contact and Address Section */
+    .contact-address {
+      background: #333;
+      color: white;
+      padding: 40px 20px;
+      display: flex;
+      flex-wrap: wrap; /* Allow wrapping for smaller screens */
+      justify-content: space-between;
+      text-align: left;
+      font-size: 1rem;
+    }
+
+    .contact-column, .address-column {
+      width: 48%; /* Each column takes up 48% of the space */
+      margin-bottom: 20px; /* Space between columns */
+    }
+
+    .contact-column h3, .address-column h3 {
+      font-size: 1.5rem;
+      margin-bottom: 10px;
+    }
+
+    /* Footer Section */
+    footer {
+      background: white;
+      color: black;
+      text-align: center;
+      padding: 20px;
+      font-size: 1.5rem;
+    }
+/* Media Queries for Responsiveness */
+@media (max-width: 1200px) {
+    .mega-news-wrapper {
+        gap: 15px;
+    }
+
+    .mega-news-card {
+        max-width: 300px;
+    }
+}
+
+@media (max-width: 992px) {
+    header .logo {
+        font-size: 2rem;
+    }
+
+    nav ul li a {
+        font-size: 1.1rem;
+    }
+
+    .mega-news-content h3 {
+        font-size: 1.3em;
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        padding: 15px;
+    }
+
+    .mega-news-wrapper {
+        padding: 10px;
+    }
+
+    .content {
+        padding: 50px;
+    }
+
+    /* Navigation Bar */
+    nav ul {
+        display: flex;
+        flex-direction: row; /* Ensure horizontal layout on smaller screens */
+        justify-content: center;
+        padding: 0;
+    }
+
+    nav ul li {
+        margin: 0 10px; /* Space between the items */
+    }
+}
+
+@media (max-width: 576px) {
+    header .logo {
+        font-size: 1.8rem;
+    }
+
+    /* Keep the navigation horizontal on mobile screens */
+    nav ul {
+        display: flex;
+        flex-direction: row; /* Horizontal layout */
+        align-items: center;
+        justify-content: center;
+        padding: 0;
+    }
+
+    nav ul li {
+        margin: 5px 10px; /* Space between the items */
+    }
+
+    .mega-news-card {
+        max-width: 100%;
+    }
+
+    /* Contact and Address Section - Side by side */
+    .contact-address {
+        display: flex; /* Ensure they stay side by side */
+        flex-wrap: wrap; /* Allow wrapping for smaller widths */
+        justify-content: space-between; /* Ensure they stay on opposite sides */
+        text-align: left; /* Align text to left */
+    }
+
+    .contact-column, .address-column {
+        width: 48%; /* Make each column take 48% width, leaving space in between */
+    }
+}
+
+
+
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">Amigos Pvt. Ltd.</div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="features.html">Features</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="video gallery.html">Video Gallery</a></li>
+    </ul>
+    </nav>
+  </header>
+
+
+
+  <!-- About Our Company Section -->
+  <div class="content">
+    <h1>About Our Company</h1>
+    <p>
+    Welcome to our business! By offering excellent features and services in our hCNG vehicles, our company is setting the standard in India's expanding hCNG market. Our goal is to prioritize customer safety while simplifying the shift to eco-friendly transportation, all at a reasonable and accessible price, establishing ourselves as a market leader.</p>
+
+<p>
+  
+    Our team of experts brings together diverse perspectives and skills to ensure the success of every project we undertake. From design and technology to customer service, we prioritize your satisfaction and strive to exceed expectations.
+    </p>
+    <p>
+      Thank you for choosing us as your trusted partner. We look forward to growing together and achieving great milestones with you.
+
+    </p>
+    <a href="index.html" class="back-btn">Back</a>
+  </div>
+    <!-- Mega News Grid Section -->
+  <div class="mega-news-wrapper">
+    <div class="mega-news-card featured" style="--bgColor: #3E3A3B;">
+      <img src="https://cdn.glitch.global/dfd4f2c6-e394-4168-8883-7eeba9f2b6c8/2eb46529-0400-4cdf-80cf-75567e14e906.360_F_833307864_2kx4pIijCmrxTKmFLy8oor5jjdd6n6Af.jpg?v=1733668737468" alt="Featured Story 1">
+      <div class="mega-news-content">
+        <h3>Thunder 400 ATV</h3>
+        <p>The thrill of adventure awaits. Get ready to conquer the trails with the all-new Thunder 400. Are you ready to ride?</p>
+      </div>
+    </div>
+    <div class="mega-news-card" style="--bgColor: #444;">
+      <img src="https://cdn.glitch.global/dfd4f2c6-e394-4168-8883-7eeba9f2b6c8/e66da29f-86e1-4777-99bc-42adfe6b58f7.istockphoto-1434116614-612x612.jpg?v=1733670487287" alt="Schedule Service">
+      <div class="mega-news-content">
+        <h3>An Easier Way to Buy Your Next Thunder 400</h3>
+        <p>ThunderPath helps you find your perfect Thunder 400 ATV, customize your terms, and finalize your purchase—all online.</p>
+      </div>
+    </div>
+    <div class="mega-news-card" style="--bgColor: #555;">
+      <img src="https://cdn.glitch.global/dfd4f2c6-e394-4168-8883-7eeba9f2b6c8/51f28e21-32a1-4c6f-bca0-22da9ee73f55.istockphoto-467645390-612x612.jpg?v=1733669506931" alt="Featured Story 2">
+      <div class="mega-news-content">
+        <h3>Amigos Cares</h3>
+        <p>24/7 Roadside Assistance.</p>
+        <p>
+          Quick, reliable roadside solutions when you need them most.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Contact and Address Section -->
+  <section class="contact-address">
+    <div class="contact-column">
+      <h3>Contact Us</h3>
+      <p>Email: Amigos.pvt.ltd.2025@gmail.com</p>
+      <p>Phone: 9100274829</p>
+      <p>Hours: Mon-Fri 9:00 AM - 6:00 PM</p>
+    </div>
+   <div class="address-column">
+            <h3>Our Address</h3>
+            <p>Amigos Pvt. Ltd.</p>
+            <p>Gandhi Nagar.</p>
+            <p>Gujarat, India, 382010</p>
+        </div>
+  </section>
+
+  <!-- Footer Section -->
+  <footer>
+    Amigos Pvt. Ltd. &copy; 2024 All Rights Reserved
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Features</title>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: 'Arial', sans-serif;
+        line-height: 1.6;
+        background-color: #D3D3D3;
+        color: #333;
+    }
+
+    a {
+        text-decoration: none;
+        color: inherit;
+    }
+
+    /* Header Styles */
+    header {
+        background: rgb(161, 120, 232);
+        color: white;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    header .logo {
+        font-size: 2.5rem; /* Responsive font size */
+        font-weight: bold;
+        color: white;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+
+    nav ul {
+        list-style: none;
+        display: flex;
+        flex-wrap: wrap; /* Allow wrapping */
+        justify-content: center; /* Center items */
+        margin-top: 10px;
+    }
+
+    nav ul li {
+        margin: 0 10px; /* Adjusted margin for smaller screens */
+    }
+
+    nav ul li a {
+        color: white;
+        font-size: 1.3rem; /* Responsive font size */
+        transition: color 0.3s;
+    }
+
+    nav ul li a:hover {
+        color: #FFD700;
+    }
+
+    .feature-category {
+        width: 100%;
+        max-width: 1200px; /* Reduced max width */
+        margin-top: 50px; /* Space between sections */
+        background: gray;
+        opacity: 90%;
+        border-radius: 0px; /* Reduced border radius */
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Reduced shadow */
+        padding: 15px; /* Reduced padding */
+        text-align: center;
+        margin-left:160px;
+        margin-right:60px;
+        align-content:center;
+        color: white
+    }
+    
+   .underlined-heading {
+    border-bottom: 2px solid wight; /* Thickness and color of the underline */
+    padding-bottom: 5px; /* Space between text and underline */
+    width: 100%;/* Increase width to extend the underline */
+    margin-center: 10px; st margin to center the heading */
+    
+    
+}
+
+    .feature-section {
+        display: flex;
+        align-items: center;
+        margin : 20px 20px; /* Space between features */
+        position: relative; /* Required for positioning the pseudo-element */
+    }
+
+    .feature-section::before {
+        content: '';
+        position: absolute;
+        left: -10px; /* Adjust this value to position the line */
+        top: 0; /* Start from the top */
+        height: 100%; /* Full height of the section */
+        width: 2px; /* Thickness of the line */
+        background-color: white; /* Color of the line */
+    }
+
+    .feature-section img {
+        width: 15%; /* Reduced image width */
+        border-radius: 10px; /* Reduced border radius */
+        margin-left: 15px; /* Margin for image */
+        margin-right: 10px;
+    }
+
+    .feature-description {
+        flex: 1; /* Take remaining space */
+    }
+
+    .feature-description h2 {
+        font-size: 32px; /* Reduced font size */
+        margin-bottom: 8px; /* Reduced margin */
+        text-align: left;
+       color: blue
+    }
+
+    .feature-description p {
+        font-size: 16px; /* Reduced font size */
+        line-height: 1.5; /* Adjusted line height */
+        text-align: left;
+       color: white
+    }
+
+    .back-btn {
+        display: inline-block;
+        margin-top: 20px;
+        padding: 8px 16px; /* Reduced padding */
+        background: #4CAF50;
+        color: #fff;
+        text-decoration: none;
+        border-radius: 5px;
+        font-size: 18px; /* Reduced font size */
+        transition: background 0.3s ease;
+        margin-left: 650px;
+    }
+
+    .back-btn:hover {
+        background: #45a049;
+    }
+
+    /* For Large Screens (1440px and above) */
+@media (min-width: 1440px) {
+    .feature-section {
+        flex-direction: row; /* Side-by-side layout */
+        align-items: center; /* Center align items */
+        gap: 30px; /* Add space between items */
+    }
+
+    .feature-section img {
+        width: 40%; /* Restrict image size */
+        margin: 0; /* Remove margins */
+    }
+
+    .feature-description h2 {
+        font-size: 36px; /* Large font for titles */
+    }
+
+    .feature-description p {
+        font-size: 18px; /* Slightly larger description text */
+    }
+
+    .back-btn {
+        font-size: 18px; /* Standard button size */
+        padding: 12px 24px; /* More padding */
+    }
+}
+
+/* For Medium Screens (1024px to 1440px) */
+@media (max-width: 1440px) and (min-width: 1024px) {
+    .feature-section {
+        flex-direction: row; /* Maintain row layout */
+        align-items: center;
+        gap: 20px; /* Moderate spacing */
+    }
+
+    .feature-section img {
+        width: 45%; /* Adjust image width */
+    }
+
+    .feature-description h2 {
+        font-size: 32px; /* Slightly reduced title size */
+    }
+
+    .feature-description p {
+        font-size: 16px; /* Description text size */
+    }
+
+    .back-btn {
+        font-size: 16px; /* Adjust button size */
+        padding: 10px 20px;
+    }
+}
+
+/* For Tablets (768px to 1024px) */
+@media (max-width: 1024px) and (min-width: 768px) {
+    .feature-section {
+        flex-direction: column; /* Stack items vertically */
+        align-items: center; /* Center items */
+        gap: 15px; /* Space between items */
+    }
+
+    .feature-section img {
+        width: 70%; /* Reduce image size */
+    }
+
+    .feature-description h2 {
+        font-size: 28px; /* Smaller titles */
+    }
+
+    .feature-description p {
+        font-size: 15px; /* Smaller description text */
+    }
+
+    .back-btn {
+        font-size: 14px; /* Smaller button size */
+        padding: 8px 16px;
+    }
+}
+
+/* For Large Phones (480px to 768px) */
+@media (max-width: 768px) and (min-width: 480px) {
+    .feature-section {
+        flex-direction: column; /* Stack items */
+        align-items: flex-start; /* Align to the start */
+        gap: 10px; /* Reduced gap */
+    }
+
+    .feature-section img {
+        width: 100%; /* Full width for images */
+        margin-bottom: 10px;
+    }
+
+    .feature-description h2 {
+        font-size: 24px; /* Smaller titles */
+    }
+
+    .feature-description p {
+        font-size: 14px; /* Smaller text */
+    }
+
+    .back-btn {
+        font-size: 14px; /* Adjust button size */
+        padding: 6px 12px;
+    }
+}
+
+/* For Small Phones (Below 480px) */
+@media (max-width: 480px) {
+    header .logo {
+        font-size: 24px; /* Reduced logo font size */
+    }
+
+    nav ul li a {
+        font-size: 16px; /* Smaller font for navigation links */
+    }
+
+    .feature-description h2 {
+        font-size: 20px; /* Smaller feature title font */
+    }
+
+    .feature-description p {
+        font-size: 12px; /* Smaller description text */
+    }
+
+    .back-btn {
+        font-size: 12px; /* Small button font */
+        padding: 5px 10px; /* Compact padding */
+    }
+}
+  
+        /* Contact and Address Section */
+        .contact-address {
+            background: #333;
+            color: white;
+            padding:  40px 20px;
+            display: flex;
+            flex-wrap: wrap; /* Allow wrapping for smaller screens */
+            justify-content: space-between;
+            text-align: left;
+            font-size: 1rem; /* Responsive font size */
+        }
+
+        .contact-column, .address-column {
+            width: 48%; /* Each column takes up 48% of the space */
+            margin-bottom: 20px; /* Space between columns */
+        }
+
+        .contact-column h3, .address-column h3 {
+            font-size: 1.5rem; /* Responsive font size */
+            margin-bottom: 10px;
+        }
+
+        /* Footer Section */
+        footer {
+            background: white;
+            color: black;
+            text-align: center;
+            padding: 20px;
+            font-size: 1.5rem; /* Responsive font size */
+        }
+  
+  
+  
+  
+  
+  body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f5f5f5;
+    }
+
+    .mega-news-wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px; /* Space between cards */
+  justify-content: center;
+  padding: 20px;
+}
+
+.mega-news-card {
+  width: 100%; /* Ensures the cards span the available grid column width */
+  height: 400px; /* Fixed height for uniformity */
+  background-color: var(--bgColor);
+  color: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  position: relative;
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+.mega-news-card:hover {
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+}
+
+.mega-news-content {
+  padding: 20px;
+  opacity: 0.9; /* Slight transparency for aesthetic */
+  transform: translateY(0);
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+.mega-news-content p1 {
+  opacity: 0; /* Initially hidden text */
+  visibility: hidden;
+  transition: opacity 0.3s ease-in-out, visibility 0s ease-in-out 0.3s;
+}
+
+.mega-news-card:hover .mega-news-content p1 {
+  opacity: 1;
+  visibility: visible;
+}
+
+.mega-news-content h3 {
+  margin: 0 0 10px;
+  font-size: 1rem;
+}
+
+.mega-news-content p1 {
+  margin: 0;
+  font-size: 0.95em;
+}
+    .underlined-heading h2{
+      font-size: 32px;
+      padding-left:50px;
+    }
+.underlined-heading {
+  font-size: 32px; /* Set the font size */
+  text-align: center; /* Center the heading */
+  margin-bottom: 20px; /* Add space below the heading */
+  color: #333; /* Optional: Set the text color */
+}
+    .section-wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px; /* Space between the sections */
+  padding: 20px;
+  margin: 0 auto;
+}
+
+.section {
+  background-color: #f5f5f5;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+    .underlined-heading {
+  font-size: 32px; /* Set the font size */
+  text-align: center; /* Center the heading */
+  margin: 20px auto; /* Space above and below the heading */
+  color: #333; /* Optional: Set the text color */
+}
+
+.underlined-heading {
+  font-size: 32px; /* Set the font size */
+  text-align: center; /* Center the heading */
+  margin: 40px auto 20px; /* Space above and below the heading */
+  color: #333; /* Optional: Set the text color */
+}
+
+.comfort-section-wrapper {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 cards in a row */
+  gap: 20px; /* Space between the cards */
+  padding: 20px; /* Padding around the section */
+  max-width: 1200px; /* Limit the width for better alignment */
+  margin: 0 auto; /* Center align the section */
+}
+
+.comfort-card {
+  width: 100%; /* Full width of the grid column */
+  height: 250px; /* Fixed height */
+  background-color: var(--bgColor);
+  color: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  position: relative;
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+.comfort-card:hover {
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+}
+
+.comfort-card-content {
+  padding: 15px; /* Slightly smaller padding for compact appearance */
+  opacity: 0.9; /* Maintain slight transparency for elegance */
+  transform: translateY(0);
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+.comfort-card-content h3 {
+  margin: 0 0 8px;
+  font-size: 1.2em; /* Slightly smaller heading size */
+}
+
+.comfort-card-content p1 {
+  margin: 0;
+  font-size: 0.9em; /* Adjusted text size for shorter paragraphs */
+}
+ .comfort-card-content {
+  padding: 15px; /* Adjust as necessary for card appearance */
+  opacity: 0.9; /* Maintain slight transparency */
+  transform: translateY(0);
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+.comfort-card-content p1 {
+  opacity: 0; /* Initially hidden */
+  visibility: hidden;
+  transition: opacity 0.3s ease-in-out, visibility 0s ease-in-out 0.3s;
+}
+
+.comfort-card:hover .comfort-card-content p1 {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .comfort-section-wrapper {
+    grid-template-columns: repeat(2, 1fr); /* 2 cards per row on smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .comfort-section-wrapper {
+    grid-template-columns: repeat(1, 1fr); /* 1 card per row on very small screens */
+  }
+}
+
+
+
+
+</style>
+</head>
+<body>
+    <header>
+        <div class="logo">Amigos Pvt. Ltd.</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="features.html">Features</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="video gallery.html">Video Gallery</a></li>
+            </ul>
+        </nav>
+    </header>
+
+
+  <h2 class="underlined-heading"> Advanced Features </h2>
+  <div class="mega-news-wrapper layout-1up">
+    
+    <div class="mega-news-card featured" style="--bgColor: #3E3A3B;">
+      <div class="mega-news-content">
+        <h3>Automatic Fire Suppression System </h3>
+        <p1>The Automatic Fire Suppression System for HCNG Vehicles ensures safety by detecting and automatically extinguishing fires caused by the high flammability of hydrogen-compressed natural gas and short circuit. It instantly activates an extinguishing agent when a fire is detected, particularly around heat-sensitive or electrical areas, preventing the fire from escalating.</p1>
+      </div>
+    </div>
+    <div class="mega-news-card" style="--bgColor: #444;">
+      <div class="mega-news-content">
+        <h3>Automatic Current Circuit Failure Detection System</h3>
+        <p1>The Automatic Current Circuit Failure Detection System improves vehicle safety by detecting electrical faults in real-time. It uses Hall-effect sensors and an Arduino microcontroller to monitor current flow and alert the driver of any wiring issues. The system displays the fault location on an LCD, enabling quicker diagnostics and safer driving.</p1>
+      </div>
+    </div>
+    <div class="mega-news-card" style="--bgColor: #555;">
+      <div class="mega-news-content">
+        <h3>Automatic Gas Leakage Detection and Cut-off System </h3>
+        <p1>An Automatic Gas Leakage Detection and cut-off System is a safety mechanism designed to detect gas leaks in real time and alert the driver immediately and cut-off the gas by regulating the valve. This system helps prevent accidents by ensuring the safety of  the passengers, driver and  vehicle.</p1>
+      </div>
+    </div>
+    
+  <div class="mega-news-card" style="--bgColor: #555;">
+    
+      <div class="mega-news-content">
+        <h3>Emergency Vehicle Shutdown System with Driver Health Trigger:</h3>
+        <p1>The Emergency Vehicle Shutdown System monitors driver health in real-time using heart rate and fatigue sensors. It detects issues like irregularities or fatigue through behavior tracking and alerts the driver. If necessary, the system automatically slows the vehicle and initiates an emergency stop.</p1>
+      </div>
+    </div>
+  </div>
+  
+ 
+
+
+  <h2 class="underlined-heading">Basic Features of a vehicle with extra safety and comfort</h2>
+  <div class="comfort-section-wrapper">
+    <div class="comfort-card" style="--bgColor: #555;">
+      <div class="comfort-card-content">
+        <h3>Ergonomic Seat Design</h3>
+        <p1>Offers comfort for long rides.</p1>
+      </div>
+    </div>
+    <div class="comfort-card" style="--bgColor: #555;">
+      <div class="comfort-card-content">
+        <h3>Brake Systems </h3>
+        <p1>Disc brakes for reliable stopping power.</p1>
+      </div>
+    </div>
+    <div class="comfort-card" style="--bgColor: #555;">
+      <div class="comfort-card-content">
+        <h3>Suspension System </h3>
+        <p1>This system allows the vehicle to adapt to variations in road surfaces and driving conditions, ensuring stability, control, and a smooth driving experience.</p1>
+      </div>
+    </div>
+    <div class="comfort-card" style="--bgColor: #555;">
+      <div class="comfort-card-content">
+        <h3>Roll-Over Protection (ROPS)</h3>
+        <p1>This design is protect the occupants of a vehicle in case of a rollover.</p1>
+      </div>
+    </div>
+       <div class="comfort-card" style="--bgColor: #555;" >
+           
+            <div class="comfort-card-content">
+                <h3>5 Point Seatbelt</h3>
+                <p1>It features five straps: two running over the shoulders, two securing around the hips, and one positioned through the groin area, all converging at a central locking buckle. </p1>
+            </div>
+           
+        </div>
+    <div class="comfort-card" style="--bgColor: #555;">
+      <div class="comfort-card-content">
+        <h3>Electric Start</h3>
+        <p1>For quick and easy engine ignition.</p1>
+      </div>
+    </div>
+    <div class="comfort-card" style="--bgColor: #444;">
+      <div class="comfort-card-content">
+        <h3>Digital Display</h3>
+        <p1>Provides information such as speed, fuel level, and diagnostics.</p1>
+      </div>
+    </div>
+    <div class="comfort-card" style="--bgColor: #555;">
+      <div class="comfort-card-content">
+        <h3>Storage Compartments</h3>
+        <p1>Handy for tools, gear, or personal items.</p1>
+      </div>
+    </div>
+  
+  
+   
+  <div class="comfort-card" style="--bgColor: #555;">
+      <div class="comfort-card-content">
+        <h3>Towing Capacity</h3>
+        <p1>Many ATVs have hitches and can tow up to 600kg or more.</p1>
+      </div>
+    </div>
+   <div class="comfort-card" style="--bgColor: #555;">
+      <div class="comfort-card-content">
+        <h3>Winch Systems</h3>
+        <p1>Useful for pulling loads or recovering the vehicle.</p1>
+      </div>
+    </div>
+    <div class="comfort-card" style="--bgColor: #555;">
+      <div class="comfort-card-content">
+        <h3>LED Lights</h3>
+        <p1>For improved visibility during night rides or in low-light conditions.</p1>
+      </div>
+    </div>
+      <div class="comfort-card" style="--bgColor: #555;">
+        <div class="comfort-card-content">
+          <h3>Custom Accessories</h3>
+          <p1>Custom accessories are items that are made to a customer's specifications.</p1>
+        
+        <p1>Android accessories: These can include keyboards, thermometers, lighting controls, or anything else that connects to an Android device</p1>
+      </div>
+    </div>
+   
+  
+  </div>
+
+
+
+
+
+
+
+    <a href="index.html" class="back-btn">Back to Home</a>
+  <section class="contact-address">
+        <div class="contact-column">
+            <h3>Contact Us</h3>
+            <p>Email: Amigos.pvt.ltd.2025@gmail.com</p>
+            <p>Phone: 9100274829</p>
+            <p>Hours: Mon-Fri 9:00 AM - 6 :00 PM</p>
+        </div>
+        <div class="address-column">
+            <h3>Our Address</h3>
+            <p>Amigos Pvt. Ltd.</p>
+            <p>Gandhi Nagar.</p>
+            <p>Gujarat, India, 382010</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        &copy; 2024 Amigos Pvt. Ltd.
+    </footer>
+    
+ </body>
+</html> 

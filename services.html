@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services</title>
+  <style>
+    /* General Styles */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: 'Arial', sans-serif;
+        line-height: 1.6;
+        background-color: #D3D3D3;
+        color: #333;
+    }
+
+    a {
+        text-decoration: none;
+        color: inherit;
+    }
+
+    /* Header Styles */
+    header {
+        background: rgb(161, 120, 232);
+        color: white;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    header .logo {
+        font-size: 2.5rem;
+        font-weight: bold;
+        color: white;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+
+    nav ul {
+        list-style: none;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-top: 10px;
+    }
+
+    nav ul li {
+        margin: 0 10px;
+    }
+
+    nav ul li a {
+        color: white;
+        font-size: 1.3rem;
+        transition: color 0.3s;
+    }
+
+    nav ul li a:hover {
+        color: #FFD700;
+    }
+
+    /* Services Section */
+    .services-container {
+        background: gray;
+        padding: 90px;
+        border-radius: 10px;
+        max-width: 1200px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+        text-align: center;
+        margin: 60px auto;
+    }
+
+    .services-container h1 {
+        font-size: 35px;
+        margin-bottom: 10px;
+        color: white;
+    }
+
+    .services-container p {
+        font-size: 20px;
+        line-height: 1.6;
+        margin-bottom: 30px;
+        color: white;
+    }
+
+    .services-list {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 20px;
+    }
+
+    .service-item {
+        background: black;
+        border-radius: 10px;
+        padding: 20px;
+        text-align: left;
+        color: rgb(161, 120, 232);
+        flex: 1 1 calc(33.33% - 20px);
+        min-width: 280px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    }
+
+    .service-item h2 {
+        font-size: 25px;
+        margin-bottom: 10px;
+        color: white;
+    }
+
+    .service-item p {
+        font-size: 20px;
+        line-height: 1.5;
+      color: white;
+    }
+
+    .back-btn {
+        display: inline-block;
+        margin-top: 20px;
+        padding: 5px 10px;
+        background: #4CAF50;
+        color: #fff;
+        text-decoration: none;
+        border-radius: 5px;
+        font-size: 15px;
+        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+        transition: background 0.3s ease;
+    }
+
+    .back-btn:hover {
+        background: #45a049;
+    }
+
+/* Media Queries */
+@media (max-width: 1200px) {
+    .services-container {
+        padding: 70px;
+    }
+
+    .services-list {
+        gap: 15px;
+    }
+
+    .service-item {
+        flex: 1 1 calc(50% - 15px); /* Two items per row */
+    }
+
+    .services-container h1 {
+        font-size: 30px;
+    }
+}
+
+@media (max-width: 992px) {
+    header .logo {
+        font-size: 2rem; /* Smaller logo */
+    }
+
+    nav ul {
+        flex-direction: row; /* Ensure horizontal layout */
+        justify-content: center; /* Center the navigation items */
+        align-items: center; /* Vertically align items */
+        gap: 15px; /* Space between the items */
+    }
+
+    nav ul li {
+        margin: 0; /* Remove margin to ensure no extra space */
+    }
+
+    .service-item {
+        flex: 1 1 calc(100% - 10px); /* Single-column layout */
+    }
+}
+
+@media (max-width: 768px) {
+    .services-container {
+        padding: 50px;
+    }
+
+    .service-item h2 {
+        font-size: 20px;
+    }
+
+    .service-item p {
+        font-size: 18px;
+    }
+
+    nav ul li a {
+        font-size: 1.1rem;
+    }
+
+    .back-btn {
+        font-size: 14px;
+        padding: 6px 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    header .logo {
+        font-size: 1.8rem; /* Compact logo for small screens */
+    }
+
+    .services-container h1 {
+        font-size: 25px;
+    }
+
+    .services-container p {
+        font-size: 16px;
+    }
+
+    .service-item h2 {
+        font-size: 18px;
+    }
+
+    .service-item p {
+        font-size: 14px;
+    }
+
+    nav ul li a {
+        font-size: 1rem;
+    }
+}
+    
+        /* Contact and Address Section */
+        .contact-address {
+            background: #333;
+            color: white;
+            padding:  40px 20px;
+            display: flex;
+            flex-wrap: wrap; /* Allow wrapping for smaller screens */
+            justify-content: space-between;
+            text-align: left;
+            font-size: 1rem; /* Responsive font size */
+        }
+
+        .contact-column, .address-column {
+            width: 48%; /* Each column takes up 48% of the space */
+            margin-bottom: 20px; /* Space between columns */
+        }
+
+        .contact-column h3, .address-column h3 {
+            font-size: 1.5rem; /* Responsive font size */
+            margin-bottom: 10px;
+        }
+
+        /* Footer Section */
+        footer {
+            background: white;
+            color: black;
+            text-align: center;
+            padding: 20px;
+            font-size: 1.5rem; /* Responsive font size */
+        }
+
+
+</style>
+
+</head>
+<body>
+    <header>
+       <div class="logo">Amigos Pvt. Ltd.</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="features.html">Features</a></li>
+                <li><a href="services.html">Services</a></li>
+                
+                <li><a href="video gallery.html">Video Gallery</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="services-container">
+        <h1>Our Services</h1>
+        <p>We offer a range of high-quality services to meet your needs. Explore what we can do for you below:</p>
+        <div class="services-list">
+            <div class="service-item">
+                <h2>Custom Design</h2>
+                <p>We provide personalized design solutions tailored to your specific requirements, ensuring your vision becomes reality.</p>
+            </div>
+            <div class="service-item">
+                <h2>IoT and AI Integration</h2>
+                <p>Smart features like predictive maintenance alerts and driver assistance systems.</p>
+            </div>
+            <div class="service-item">
+                <h2>Warranty</h2>
+                <p>Offers a comprehensive warranty covering manufacturing defects, ensuring free repairs or replacements through authorized service centers.</p>
+            </div>
+            <div class="service-item">
+                <h2>Roadside Assistance</h2>
+                <p>24/7 help for breakdowns, flat tires, battery jumps, etc.</p>
+            </div>
+            <div class="service-item">
+                <h2>Service through Mobile</h2>
+                <p>On-the-go maintenance and minor repairs at the customer’s location.</p>
+            </div>
+            <div class="service-item">
+                <h2>Online and Offline Support</h2>
+                <p>Efficient customer service through apps, websites, and dealerships.</p>
+            </div>
+        </div>
+        <a href="index.html" class="back-btn">Back to Home</a>
+    </div>
+  <section class="contact-address">
+        <div class="contact-column">
+            <h3>Contact Us</h3>
+            <p>Email: Amigos.pvt.ltd.2025@gmail.com</p>
+            <p>Phone: 9100274829</p>
+            <p>Hours: Mon-Fri 9:00 AM - 6 :00 PM</p>
+        </div>
+        <div class="address-column">
+            <h3>Our Address</h3>
+            <p>Amigos Pvt. Ltd.</p>
+            <p>Gandhi Nagar.</p>
+            <p>Gujarat, India, 382010</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        &copy; 2024 Amigos Pvt. Ltd.
+    </footer>
+    
+</body>
+</html>

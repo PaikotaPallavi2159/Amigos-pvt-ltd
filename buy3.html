@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About ATV</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+        }
+
+        .about-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            width: 100%;
+            min-height: 100vh;
+            background-color: #ffffff;
+            padding: 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        .info-section {
+            flex: 1 1 45%;
+            padding: 20px;
+            color: #333;
+        }
+
+        .info-section h1 {
+            font-size: 40px;
+            margin-bottom: 20px;
+        }
+
+        .info-section p {
+            font-size: 18px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .info-section img {
+            width: 100%;
+            border-radius: 8px;
+            margin-top: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .specifications-section {
+            flex: 1 1 45%;
+            padding: 20px;
+        }
+
+        .specifications-section table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 16px;
+            margin-top: 30px;
+        }
+
+        .specifications-section thead th {
+            background-color: #007bff;
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .specifications-section tbody td {
+            padding: 8px 12px;
+            border: 1px solid #ddd;
+        }
+
+        .specifications-section tbody tr:nth-child(odd) {
+            background-color: #f9f9f9;
+        }
+
+        .specifications-section tbody tr:nth-child(even) {
+            background-color: #ffffff;
+        }
+
+        @media (max-width: 768px) {
+            .about-container {
+                flex-direction: column;
+            }
+
+            .info-section, .specifications-section {
+                flex: 1 1 100%;
+            }
+        }
+      /* Products Section */
+.products {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.products h2 {
+    margin-bottom: 30px;
+    font-size: 40px;
+    font-weight: bold;
+    color: #222;
+}
+
+/* Product List Styling */
+.product-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px; /* Adds space between products */
+}
+
+/* Individual Product Card Styling */
+.product {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    flex: 0 1 calc(33.33% - 40px); /* Three items in a row */
+    max-width: 300px; /* Restricts the width */
+}
+
+.product img {
+    width: 100%;
+    height: 65%;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.product h3 {
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+    margin: 10px 0;
+}
+
+.product p {
+    font-size: 18px;
+    color: #555;
+}
+
+.pp {
+    background: green;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.pp:hover {
+    background: #0056b3;
+}
+
+/* Back to Home Button Styling */
+.back-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background: green;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 250px;
+    margin-top: 20px;
+    font-size: 24px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+    transition: background 0.3s ease;
+}
+
+.back-btn:hover {
+    background: #4CAF50;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .product {
+        flex: 0 1 calc(50% - 20px); /* Two items per row on medium screens */
+    }
+}
+
+@media (max-width: 768px) {
+    .product {
+        flex: 0 1 calc(100% - 20px); /* One item per row on smaller screens */
+    }
+}
+    </style>
+</head>
+<body>
+    <div class="about-container">
+        <!-- Left Section -->
+        <div class="info-section">
+            <h1>About Titan 600</h1>
+            <p>
+                The new Amigos Titan 600 is a premium compact ATV with a contemporary and stylish design. It comes equipped with a host of comfort, safety, and feel-good features. Both petrol and hCNG powertrain options are available, catering to diverse preferences.
+            </p>
+            <img src="https://cdn.glitch.global/e1200516-43d3-4e38-bee3-cfa85c7f5575/thumbnails%2F7694baa1-0d98-45a0-b615-ba219723073b.Picsart_24-12-05_15-36-13-447.png?1733393266065" alt="ATV Image">
+        </div>
+           <!-- Right Section -->
+        <div class="specifications-section">
+            <table>
+                <thead>
+                    <tr>
+                        <th colspan="2">Engine Specifications</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Length (mm)</td>
+                        <td>2142.6</td>
+                    </tr>
+                    <tr>
+                        <td>Width (mm)</td>
+                        <td>1511.9</td>
+                    </tr>
+                    <tr>
+                        <td>Height (mm)</td>
+                        <td>1555.1</td>
+                    </tr>
+                    <tr>
+                        <td>Wheelbase (mm)</td>
+                        <td>1606.3</td>
+                    </tr>
+                    <tr>
+                        <td>Turning Radius (m)</td>
+                        <td>2.3</td>
+                    </tr>
+                    <tr>
+                        <td>Ground Clearance (mm)</td>
+                        <td>355.6 </td>
+                    </tr>
+                    <tr>
+                        <td>Seating Capacity</td>
+                        <td>2</td>
+                    </tr>
+                    <tr>
+                        <td>Kerb Weight (kg)</td>
+                        <td>290</td>
+                    </tr>
+                  <tr>
+                        <td>Engine Model</td>
+                        <td>G600 CNG BS IV </td>
+                    </tr>
+                  <tr>
+                        <td>CC</td>
+                        <td>400</td>
+                    </tr>
+                    <tr>
+                        <td>Fuel</td>
+                        <td>hCNG/Petrol</td>
+                    </tr>
+                    <tr>
+                        <td>Max Power</td>
+                        <td>11 HP @ 3200 rpm</td>
+                    </tr>
+                  <tr>
+                        <td>Torque</td>
+                        <td>40 N-m @ 1800rpm</td>
+                    </tr>
+                  <tr>
+                        <td>Speed</td>
+                        <td>90 km/hr</td>
+                    </tr>
+                    <tr>
+                        <td>Transmission</td>
+                        <td>CVT with Gear Box Reduction</td>
+                    </tr>
+                    <tr>
+                        <td>Drive</td>
+                        <td>Four wheel drive</td>
+                    </tr>
+                    <tr>
+                        <td>Front and Rear Brake</td>
+                        <td>Disc Brakes</td>
+                    </tr>
+                  <tr>
+                        <td>Steering</td>
+                        <td>Power Steering</td>
+                    </tr>
+                    <tr>
+                        <td>Suspension</td>
+                        <td>Double Wishbone</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+   <!-- Our Buggies Section -->
+    <section id="products" class="products">
+    <h2>Products</h2>
+    <div class="product-list">
+        
+        <div class="product">
+            <img src="https://cdn.glitch.global/2a1e26d9-ab9f-4d0d-922f-a475d812e321/thumbnails%2F1734951385109_9q29pn_2_0.jpg?1734951593348" alt="Buggy 2">
+            <h3>Amigos Thunder 400</h3>
+           
+            <a href="buy.html" rel="#" class="pp">Details</a>
+        </div>
+        <div class="product">
+            <img src="https://cdn.glitch.global/e1200516-43d3-4e38-bee3-cfa85c7f5575/644fbb69-1a0e-4de2-b173-7463b079ae3e.Picsart_24-12-05_13-56-58-021.png?v=1733387301430" alt="Buggy 3">
+            <h3>Amigos Titan 400</h3>
+            
+            <a href="buy1.html" rel="#" class="pp">Details</a>
+        </div>
+        <div class="product">
+            <img src="https://cdn.glitch.global/e1200516-43d3-4e38-bee3-cfa85c7f5575/thumbnails%2F50c5f6cc-16cd-4322-aa90-b8104cf286ae.Picsart_24-12-05_15-13-07-955.png?1733391876677" alt="Buggy 4">
+            <h3>Amigos Thunder 600</h3>
+         
+            <a href="buy2.html" rel="#" class="pp">Details</a>
+        </div>
+    </div>
+       <div>
+        <a href="index.html" class="back-btn">Back to Home</a>
+    </div>
+</section>
+</body>
+</html>
